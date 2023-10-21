@@ -1,0 +1,14 @@
+<div style="background-color: aquamarine">
+  {% for blog in blogs %}
+
+  <h1 style="background-color: bisque">{{blog.title}}</h1>
+
+  <img
+    src="{{blog.bounty.url}}"
+    alt="nahi hai kuch bounty saale ke upar"
+    width="200 px"
+    length="200 px"
+  />
+
+  {% endfor %}
+</div>

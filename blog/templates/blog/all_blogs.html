@@ -1,0 +1,29 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
+
+<div  class="row justify-content-center mb-3"
+style="background-color: antiquewhite">
+<div class="col-md-9 text-center">
+</div>
+
+</div>
+
+<h1 id="blogtitle" class="font-weight-bold text-center" style = >All CrewMates</h1>
+
+<h3 class="text-center mb-5">
+  Monkey D.Luffy has a total of {{ blogs.count }} Crewmates
+</h3>
+
+{% for blog in blogs %}
+
+<h3>
+  <a href=" {% url 'blog:detail' blog.id %} "> <h2>{{blog.title}}</h2> </a>
+  <img
+    src="{{blog.image.url}}"
+    alt="nahi mil rahi image"
+    width="500px"
+    lenght="500px"
+  />
+  <p>{{blog.description|striptags|truncatechars:200}}</p>
+</h3>
+
+{% endfor %} {% endblock %}

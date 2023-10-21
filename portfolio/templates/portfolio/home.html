@@ -1,0 +1,38 @@
+{% extends "portfolio/base.html" %} {% load static %} {% block content %}
+
+<div
+  class="row justify-content-center mb-3"
+  style="background-color: antiquewhite"
+>
+  <div class="col-md-9 text-center">
+    <h1>One Piece Diaries</h1>
+
+    <h2>
+      <a href="{% url 'blog:all_blogs'  %}">All CrewMates </a>
+    </h2>
+
+    <img src="{% static 'portfolio/luffy.jpg' %}" alt="" />
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    {% for project in projects %}
+
+    <h1>{{project.title}}</h1>
+    <img
+      src="{{project.image.url}}"
+      alt="nahi mili image"
+      length="300px"
+      width="300px"
+    />
+
+    <p>{{project.description}}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<br />
+
+{% endblock %}
